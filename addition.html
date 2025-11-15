@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Addition of Two Numbers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background: #f6f8fa;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .addition-container {
+            background: #fff;
+            padding: 2rem 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            min-width: 320px;
+            width: 100%;
+            max-width: 350px;
+        }
+        .addition-container h2 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #222;
+        }
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 0.6rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        button {
+            background: #2d8cf0;
+            color: #fff;
+            border: none;
+            padding: 0.7rem;
+            width: 100%;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #2273c4;
+        }
+        .result {
+            margin-top: 1.2rem;
+            text-align: center;
+            font-size: 1.2rem;
+            color: #2273c4;
+        }
+    </style>
+</head>
+<body>
+    <div class="addition-container">
+        <h2>Add Two Numbers</h2>
+        <form id="additionForm">
+            <div class="form-group">
+                <label for="num1">First Number</label>
+                <input type="number" id="num1" required>
+            </div>
+            <div class="form-group">
+                <label for="num2">Second Number</label>
+                <input type="number" id="num2" required>
+            </div>
+            <button type="submit">Add</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+    <script>
+        document.getElementById('additionForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var num1 = parseFloat(document.getElementById('num1').value) || 0;
+            var num2 = parseFloat(document.getElementById('num2').value) || 0;
+            var sum = num1 + num2;
+            document.getElementById('result').textContent = "Result: " + sum;
+        });
+    </script>
+</body>
+</html>
